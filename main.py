@@ -40,7 +40,7 @@ def call_API(object_label, number, access_token, confidence):
             'InArray': [
                 {
                     'object_detected': object_label,
-                    'number_of_persons': number
+                    'number': number
                 }
             ]
         }
