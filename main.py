@@ -31,7 +31,7 @@ def parse_arguments() -> argparse.Namespace:
 def call_API(object_label, number, access_token, confidence):
     print(confidence)
 
-    # Send API POST request if a person is detected
+    # Send API POST request if a specified object is detected
     if object_label == PERSON_LABEL:
         data = {
             'InPlant': "--yourplant---",
