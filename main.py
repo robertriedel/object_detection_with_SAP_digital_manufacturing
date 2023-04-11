@@ -8,6 +8,7 @@ from ultralytics import YOLO
 from oauth2_request import get_access_token
 
 PERSON_LABEL = "cell phone"
+# Enter here your SAP DMC URL and your production process path  https://....test.execution.eu20.dmc.cloud.sap/pe/api/v1....
 API_ENDPOINT = ""
 # Define the OAuth 2.0 endpoint and credentials
 token_endpoint = ""
