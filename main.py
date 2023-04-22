@@ -79,9 +79,22 @@ def main():
         
         labels = []
         confidences = {}
-        for detection in detections:
-            confidence = detection[2]
-            class_id = detection[3]
+        # Get the length of any array in the Detections object (assuming they are of the same length)
+        n_detections = len(detections.class_id)
+        for i in range(n_detections):
+            
+            confidence = detections.confidence[i]
+            class_id = detections.class_id[i]
+            if class_id is None:
+                print("None value encountered for class_id. Skipping this detection.")
+                continue
+
+            if class_id in model.names:
+                label = model.names[class_id]
+            else:
+                print(f"Unknown class ID: {class_id}")
+                continue
+
             label = model.names[class_id]
             labels.append(label)
             confidences[label] = confidence
